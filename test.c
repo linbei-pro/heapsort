@@ -17,23 +17,23 @@ void minfixheapsort(int* arr, int i, int n)
 	int lift = i * 2 + 1;
 	int right = i * 2 + 2;
 
-	//Èç¹û×ó×ÓÊ÷Ô½½ç
+	//å¦‚æœå·¦å­æ ‘è¶Šç•Œ
 	if (lift >= n) {
 		return;
 	}
 	int min = lift;
-	if (right >=n)//Èç¹ûÓÒ×ÓÊ÷Ô½½ç
+	if (right >=n)//å¦‚æœå³å­æ ‘è¶Šç•Œ
 	{
 		min = lift;
 	}
-	else//¶¼Ã»Ô½½ç
+	else//éƒ½æ²¡è¶Šç•Œ
 	{
-		if (arr[lift] > arr[right])//Èç¹ûÓÒ×ÓÊ÷±È×ó×ÓÊ÷Ğ¡
+		if (arr[lift] > arr[right])//å¦‚æœå³å­æ ‘æ¯”å·¦å­æ ‘å°
 		{
 			min = right;
 		}
 	}
-	if (arr[i] > arr[min])
+	if (arr[i] > arr[min])//è‹¥æƒ³è¦å®ç°å¤§é¡¶å †ï¼Œåªéœ€æŠŠè¿™ä¸ª > ä¸ä¸Šä¸€ä¸ª > æ”¹ä¸º < å³å¯
 	{
 		int temp = arr[i];
 		arr[i] = arr[min];
@@ -44,7 +44,7 @@ void minfixheapsort(int* arr, int i, int n)
 
 }
 
-void makeheap(int* arr, int n)//½¨¶Ñ
+void makeheap(int* arr, int n)//å»ºå †
 {
 	int i = 0;
 	for (i = n / 2 - 1; i >= 0; i--)
@@ -57,7 +57,7 @@ void minheapsort(int* arr, int n)
 {
 	makeheap(arr, n);
 	int i = 0;
-	for (i = n -1; i >= 0; i--)//ÅÅĞò
+	for (i = n -1; i >= 0; i--)//æ’åº
 	{
 		int temp = arr[0];
 		arr[0] = arr[i];
